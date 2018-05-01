@@ -1,0 +1,8 @@
+@mixin fontSize($sizeValue) {
+    font-size: $sizeValue * 1px;
+    font-size: ($sizeValue/10) * 1rem;
+}
+
+html {
+    font-size: 62.5%;
+}
