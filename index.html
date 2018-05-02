@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-
-        <main>
-            <header class="mainHeader">
+    <main>
+        
+            <!-- <header class="mainHeader">
                 <h1>
                     A lion
                     <br /> does not
@@ -21,12 +21,63 @@
                     <br /> eats a zebra
                     <br />
                 </h1>
-            </header>
+            </header> -->
+            <form action="">
+                <section class="liquor">
+                    <h2>Choose your favourite liquor</h2>
+                    <label for="gin">Gin</label>
+                    <input type="radio" name="liquorChoice" id="gin" value="gin">
+
+                    <label for="tequila">Tequila</label>
+                    <input type="radio" name="liquorChoice" id="tequila" value="tequila">
+
+                    <label for="whiskey">Whiskey</label>
+                    <input type="radio" name="liquorChoice" id="whiskey" value="whiskey">
+
+                    <label for="vodka">Vodka</label>
+                    <input type="radio" name="liquorChoice" id="vodka" value="vodka">
+                    
+                </section>
+                <section class="flavourProfile">
+                    <h2>Flavour Profile</h2>
+                    <label for="sweet">Sweet</label>
+                    <input type="radio" name="flavour" id="sweet" value="sweet">
+                
+                    <label for="fruity">Fruity</label>
+                    <input type="radio" name="flavour" id="fruity" value="fruity">
+                
+                    <label for="bitter">Bitter</label>
+                    <input type="radio" name="flavour" id="bitter" value="bitter">
+                </section>
+
+                <section class="iceSelection">
+                    <h2>Ice?</h2>
+                    <label for="rocks">Rocks</label>
+                    <input type="radio" name="ice" id="rocks" value="rocks">
+                
+                    <label for="straightUp">Straight Up</label>
+                    <input type="radio" name="ice" id="straightUp" value="straightUp">
+                </section>
+
+                <section class="garnishSelection">
+                    <h2>Garnish</h2>
+                    <label for="herbs">Herbs</label>
+                    <input type="radio" name="garnish" id="herbs" value="herbs">
+                
+                    <label for="citrus">Citrus</label>
+                    <input type="radio" name="garnish" id="citrus" value="citrus">
+                </section>
+
+                <input type="submit" value="Shake it up!">
+            </form>
+            <button>Play Again!</button>
        
-         
-        </main>
+        <div class="finalCocktailDescision">
+        </div>
 
 
+
+    </main>
 
 <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
 <script src="js/script.js"></script>

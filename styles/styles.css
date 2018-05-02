@@ -134,39 +134,3 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 
 html {
   font-size: 62.5%; }
-
-body {
-  height: 100hv;
-  background: #EDEEE9;
-  margin: 0; }
-
-@-webkit-keyframes animateShadow {
-  0% {
-    text-shadow: 0px 0px #252526, -1px 1px #252526, -2px 2px #252526, -3px 3px #252526, -4px 4px #252526, -5px 5px #252526, -6px 6px #252526, -7px 7px #252526, -8px 8px #252526, -9px 9px #252526, -10px 10px #252526, -11px 11px #252526, -12px 12px #252526, -13px 13px #252526, -14px 14px #252526, -15px 15px #252526, -16px 16px #252526, -17px 17px #252526, -18px 18px #252526, -19px 19px #252526, -20px 20px #252526, -21px 21px #313134, -22px 22px #313134, -23px 23px #313134, -24px 24px #313134, -25px 25px #313134, -26px 26px #313134, -27px 27px #313134, -28px 28px #313134, -29px 29px #313134, -30px 30px #313134, -31px 31px #313134, -32px 32px #313134, -33px 33px #313134, -34px 34px #313134, -35px 35px #313134, -36px 36px #313134, -37px 37px #313134, -38px 38px #313134, -39px 39px #313134, -40px 40px #313134, -41px 41px #3e3e40, -42px 42px #3e3e40, -43px 43px #3e3e40, -44px 44px #3e3e40, -45px 45px #3e3e40, -46px 46px #3e3e40, -47px 47px #3e3e40, -48px 48px #3e3e40, -49px 49px #3e3e40, -50px 50px #3e3e40, -51px 51px #3e3e40, -52px 52px #3e3e40, -53px 53px #3e3e40, -54px 54px #3e3e40, -55px 55px #3e3e40, -56px 56px #3e3e40, -57px 57px #3e3e40, -58px 58px #3e3e40, -59px 59px #3e3e40, -60px 60px #3e3e40; }
-  100% {
-    text-shadow: 0px 0px #252526, -1px 1px #252526, -2px 2px #252526, -3px 3px #252526, -4px 4px #252526, -5px 5px #252526, -6px 6px #252526, -7px 7px #252526, -8px 8px #252526, -9px 9px #252526, -10px 10px #252526, -11px 11px #252526, -12px 12px #252526, -13px 13px #252526, -14px 14px #252526, -15px 15px #252526, -16px 16px #252526, -17px 17px #252526, -18px 18px #252526, -19px 19px #252526, -20px 20px #252526, -21px 21px #313134, -22px 22px #313134, -23px 23px #313134, -24px 24px #313134, -25px 25px #313134, -26px 26px #313134, -27px 27px #313134, -28px 28px #313134, -29px 29px #313134, -30px 30px #313134, -31px 31px #313134, -32px 32px #313134, -33px 33px #313134, -34px 34px #313134, -35px 35px #313134, -36px 36px #313134, -37px 37px #313134, -38px 38px #313134, -39px 39px #313134, -40px 40px #313134, -41px 41px #3e3e40, -42px 42px #3e3e40, -43px 43px #3e3e40, -44px 44px #3e3e40, -45px 45px #3e3e40, -46px 46px #3e3e40, -47px 47px #3e3e40, -48px 48px #3e3e40, -49px 49px #3e3e40, -50px 50px #3e3e40, -51px 51px #3e3e40, -52px 52px #3e3e40, -53px 53px #3e3e40, -54px 54px #3e3e40, -55px 55px #3e3e40, -56px 56px #3e3e40, -57px 57px #3e3e40, -58px 58px #3e3e40, -59px 59px #3e3e40, -60px 60px #3e3e40; } }
-
-@keyframes animateShadow {
-  0% {
-    text-shadow: 0px 0px #252526, -1px 1px #252526, -2px 2px #252526, -3px 3px #252526, -4px 4px #252526, -5px 5px #252526, -6px 6px #252526, -7px 7px #252526, -8px 8px #252526, -9px 9px #252526, -10px 10px #252526, -11px 11px #252526, -12px 12px #252526, -13px 13px #252526, -14px 14px #252526, -15px 15px #252526, -16px 16px #252526, -17px 17px #252526, -18px 18px #252526, -19px 19px #252526, -20px 20px #252526, -21px 21px #313134, -22px 22px #313134, -23px 23px #313134, -24px 24px #313134, -25px 25px #313134, -26px 26px #313134, -27px 27px #313134, -28px 28px #313134, -29px 29px #313134, -30px 30px #313134, -31px 31px #313134, -32px 32px #313134, -33px 33px #313134, -34px 34px #313134, -35px 35px #313134, -36px 36px #313134, -37px 37px #313134, -38px 38px #313134, -39px 39px #313134, -40px 40px #313134, -41px 41px #3e3e40, -42px 42px #3e3e40, -43px 43px #3e3e40, -44px 44px #3e3e40, -45px 45px #3e3e40, -46px 46px #3e3e40, -47px 47px #3e3e40, -48px 48px #3e3e40, -49px 49px #3e3e40, -50px 50px #3e3e40, -51px 51px #3e3e40, -52px 52px #3e3e40, -53px 53px #3e3e40, -54px 54px #3e3e40, -55px 55px #3e3e40, -56px 56px #3e3e40, -57px 57px #3e3e40, -58px 58px #3e3e40, -59px 59px #3e3e40, -60px 60px #3e3e40; }
-  100% {
-    text-shadow: 0px 0px #252526, -1px 1px #252526, -2px 2px #252526, -3px 3px #252526, -4px 4px #252526, -5px 5px #252526, -6px 6px #252526, -7px 7px #252526, -8px 8px #252526, -9px 9px #252526, -10px 10px #252526, -11px 11px #252526, -12px 12px #252526, -13px 13px #252526, -14px 14px #252526, -15px 15px #252526, -16px 16px #252526, -17px 17px #252526, -18px 18px #252526, -19px 19px #252526, -20px 20px #252526, -21px 21px #313134, -22px 22px #313134, -23px 23px #313134, -24px 24px #313134, -25px 25px #313134, -26px 26px #313134, -27px 27px #313134, -28px 28px #313134, -29px 29px #313134, -30px 30px #313134, -31px 31px #313134, -32px 32px #313134, -33px 33px #313134, -34px 34px #313134, -35px 35px #313134, -36px 36px #313134, -37px 37px #313134, -38px 38px #313134, -39px 39px #313134, -40px 40px #313134, -41px 41px #3e3e40, -42px 42px #3e3e40, -43px 43px #3e3e40, -44px 44px #3e3e40, -45px 45px #3e3e40, -46px 46px #3e3e40, -47px 47px #3e3e40, -48px 48px #3e3e40, -49px 49px #3e3e40, -50px 50px #3e3e40, -51px 51px #3e3e40, -52px 52px #3e3e40, -53px 53px #3e3e40, -54px 54px #3e3e40, -55px 55px #3e3e40, -56px 56px #3e3e40, -57px 57px #3e3e40, -58px 58px #3e3e40, -59px 59px #3e3e40, -60px 60px #3e3e40; } }
-
-.mainHeader {
-  padding: 40px;
-  overflow: hidden;
-  margin: 0 auto;
-  font-weight: 600;
-  line-height: 80px;
-  font-size: 60px;
-  text-align: left;
-  font-size: 3rem;
-  color: #EDEEE9;
-  font-family: 'Georgia';
-  text-shadow: 0px 0px #252526, -1px 1px #252526, -2px 2px #252526, -3px 3px #252526, -4px 4px #252526, -5px 5px #252526, -6px 6px #252526, -7px 7px #252526, -8px 8px #252526, -9px 9px #252526, -10px 10px #252526, -11px 11px #252526, -12px 12px #252526, -13px 13px #252526, -14px 14px #252526, -15px 15px #252526, -16px 16px #252526, -17px 17px #252526, -18px 18px #252526, -19px 19px #252526, -20px 20px #252526, -21px 21px #313134, -22px 22px #313134, -23px 23px #313134, -24px 24px #313134, -25px 25px #313134, -26px 26px #313134, -27px 27px #313134, -28px 28px #313134, -29px 29px #313134, -30px 30px #313134, -31px 31px #313134, -32px 32px #313134, -33px 33px #313134, -34px 34px #313134, -35px 35px #313134, -36px 36px #313134, -37px 37px #313134, -38px 38px #313134, -39px 39px #313134, -40px 40px #313134, -41px 41px #3e3e40, -42px 42px #3e3e40, -43px 43px #3e3e40, -44px 44px #3e3e40, -45px 45px #3e3e40, -46px 46px #3e3e40, -47px 47px #3e3e40, -48px 48px #3e3e40, -49px 49px #3e3e40, -50px 50px #3e3e40, -51px 51px #3e3e40, -52px 52px #3e3e40, -53px 53px #3e3e40, -54px 54px #3e3e40, -55px 55px #3e3e40, -56px 56px #3e3e40, -57px 57px #3e3e40, -58px 58px #3e3e40, -59px 59px #3e3e40, -60px 60px #3e3e40;
-  -webkit-animation-name: animateShadow;
-  animation-name: animateShadow;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite; }
