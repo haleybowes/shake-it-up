@@ -6,24 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shake It Up!</title>
 
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
     <!-- site styles -->
     <link rel="stylesheet" href="styles/styles.css">
+    
 </head>
+
 <body>
-    <main>
-        
-            <!-- <header class="mainHeader">
+    
+        <header id="top" class="mainHeader fullView">
+            <div class="mainHeaderText">
                 <h1>
-                    A lion
-                    <br /> does not
-                    <br /> ask permission
-                    <br /> before he
-                    <br /> eats a zebra
-                    <br />
+                    Shake<br>
+                    it up!
                 </h1>
-            </header> -->
+            </div>
+            <div class="sideHeaderText">
+                <p>Find your perfect summer cocktail with this quick and easy questionnaire. </p>
+                <div class="button"><a href="#">Get Shaking</a></div>
+                <img src="images/cocktail3.png" alt="">
+            </div>
+            
+        </header>
+        <main class="wrapper">
             <form action="">
-                <section class="liquor">
+                <section class="liquor fullView">
                     <h2>Choose your favourite liquor</h2>
                     <label for="gin">Gin</label>
                     <input type="radio" name="liquorChoice" id="gin" value="gin">
@@ -38,7 +49,7 @@
                     <input type="radio" name="liquorChoice" id="vodka" value="vodka">
                     
                 </section>
-                <section class="flavourProfile">
+                <section class="flavourProfile fullView">
                     <h2>Flavour Profile</h2>
                     <label for="sweet">Sweet</label>
                     <input type="radio" name="flavour" id="sweet" value="sweet">
@@ -50,7 +61,7 @@
                     <input type="radio" name="flavour" id="bitter" value="bitter">
                 </section>
 
-                <section class="iceSelection">
+                <section class="iceSelection fullView">
                     <h2>Ice?</h2>
                     <label for="rocks">Rocks</label>
                     <input type="radio" name="ice" id="rocks" value="rocks">
@@ -59,7 +70,7 @@
                     <input type="radio" name="ice" id="straightUp" value="straightUp">
                 </section>
 
-                <section class="garnishSelection">
+                <section class="garnishSelection fullView">
                     <h2>Garnish</h2>
                     <label for="herbs">Herbs</label>
                     <input type="radio" name="garnish" id="herbs" value="herbs">
@@ -70,10 +81,16 @@
 
                 <input type="submit" value="Shake it up!">
             </form>
-            <button>Play Again!</button>
+            <div class="finishForm">
+
+            </div>
+            
        
-        <div class="finalCocktailDescision">
+        <div class="finalCocktailDescision fullView">
         </div>
+        <a href="#top">
+            <button>Play Again!</button>
+        </a>
 
 
 

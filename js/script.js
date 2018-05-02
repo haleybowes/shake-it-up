@@ -1,3 +1,42 @@
+// smooth scroll
+$('a[href*="#"]')
+    .not('[href="#"]')
+    .not('[href="#0"]')
+    .click(function (event) {
+        if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+            &&
+            location.hostname == this.hostname
+        ) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top
+                }, 1000, function () {
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) {
+                        return false;
+                    } else {
+                        $target.attr('tabindex', '-1'); $target.focus();
+                        };
+                    });
+            }
+        }
+    });
+
+// smooth scroll end
+
+
+
+
+
+
+
+
+// 
 const cocktailLiquor = {
     gin: [
         {
@@ -29,7 +68,7 @@ const cocktailLiquor = {
             rocks: true,
             straightUp: false,
             citrus: true,
-            herbs: false
+            herbs: false,
         }, 
         {
             name: 'gimlet',
@@ -39,50 +78,123 @@ const cocktailLiquor = {
             rocks: true,
             straightUp: true,
             citrus: true,
-            herbs: true
-        },             
-    ]    
-    ,
+            herbs: true,
+        }             
+    ],
     tequila: [
         {
-            name: 'tequila1',
+            name: 'marg',
             bitter: true,
-            sweet: false,
-            fruity: false,
+            sweet: true,
+            fruity: true,
+            rocks: true,
+            straightUp: false,
+            citrus: true,
+            herbs: false,
         },
         {
-            name: 'tequila2',
+            name: 'pinneapleHibiscus',
             bitter: false,
             sweet: true,
-            fruity: false,
+            fruity: true,
+            rocks: true,
+            straightUp: false,
+            citrus: true,
+            herbs: true,
         },
         {
-            name: 'tequila3',
-            bitter: false,
-            sweet: false,
+            name: 'siesta',
+            bitter: true,
+            sweet: true,
             fruity: true,
-        },       
+            rocks: false,
+            straightUp: true,
+            citrus: true,
+            herbs: false,
+        },
+        {
+            name: 'elDiablo',
+            bitter: true,
+            sweet: true,
+            fruity: true,
+            rocks: true,
+            straightUp: false,
+            citrus: false,
+            herbs: true,
+        },
+        {
+            name: 'laureate',
+            bitter: true,
+            sweet: true,
+            fruity: true,
+            rocks: false,
+            straightUp: true,
+            citrus: true,
+            herbs: true,
+        }                            
     ],
 
     vodka: [
         {
-            name: 'vodka1',
-            bitter: true,
-            sweet: false,
-            fruity: false,
-        },
-        {
-            name: 'vodka2',
+            name: 'harveys',
             bitter: false,
             sweet: true,
-            fruity: false,
+            fruity: true,
+            rocks: false,
+            straightUp: true,
+            citrus: true,
+            herbs: false,
         },
         {
-            name: 'vodka3',
-            bitter: false,
+            name: 'frenchMartini',
+            bitter: true,
+            sweet: true,
+            fruity: true,
+            rocks: false,
+            straightUp: true,
+            citrus: true,
+            herbs: true,
+        },
+        {
+            name: 'moscowMule',
+            bitter: true,
+            sweet: true,
+            fruity: false,
+            rocks: true,
+            straightUp: false,
+            citrus: true,
+            herbs: false,
+        },
+        {
+            name: 'greengoddess',
+            bitter: true,
+            sweet: true,
+            fruity: false,
+            rocks: true,
+            straightUp: false,
+            citrus: true,
+            herbs: true,
+        },
+        {
+            name: 'saltydog',
+            bitter: true,
             sweet: false,
             fruity: true,
-        },       
+            rocks: true,
+            straightUp: false,
+            citrus: true,
+            herbs: false,
+        },
+        {
+            name: 'vesper',
+            bitter: true,
+            sweet: false,
+            fruity: true,
+            rocks: false,
+            straightUp: true,
+            citrus: true,
+            herbs: false,
+        }                      
     ],
     whiskey: [
         {
@@ -92,21 +204,39 @@ const cocktailLiquor = {
             fruity: false,
             rocks: false,
             straightUp: true,
-            fruit: true,
-            herb: false
+            citrus: true,
+            herbs: false
         },
         {
-            name: 'whiskey2',
+            name: 'bourbonPunch',
             bitter: false,
             sweet: true,
-            fruity: false,
+            fruity: true,
+            rocks: true,
+            straightUp: false,
+            citrus: true,
+            herbs: false
         },
         {
-            name: 'whiskey3',
-            bitter: false,
-            sweet: false,
+            name: 'orangeMintJulip',
+            bitter: true,
+            sweet: true,
             fruity: true,
+            rocks: true,
+            straightUp: false,
+            citrus: true,
+            herbs: true
         },
+        {
+            name: 'sageDerby',
+            bitter: true,
+            sweet: true,
+            fruity: true,
+            rocks: false,
+            straightUp: true,
+            citrus: true,
+            herbs: true
+        }
     ]
 }
 
@@ -124,10 +254,19 @@ $(function (){
         const flavour = $('input[name=flavour]:checked').val();
         const ice = $('input[name=ice]:checked').val();
         const garnish = $('input[name=garnish]:checked').val();
-        
-        
-        // console.log(flavour);
-        
+
+        // make it required to fill out all fields in order to get a cocktail - inform user upon submit that a field is missing
+        if (!$('input[name=liquorChoice]:checked').val() ||
+            !$('input[name=flavour]:checked').val() ||
+            !$('input[name=ice]:checked').val() ||
+            !$('input[name=garnish]:checked').val()
+            ){
+                $('.finishForm').append(
+                    '<p>Please fill out all fields to get your cocktail!</p>'
+                );
+            };
+
+
         // filter the cocktail choices based on the users liquor choice
         const liquorChoice = cocktailLiquor[liquor];
         // console.log(liquorChoice)
@@ -160,29 +299,24 @@ $(function (){
             const storedGarnish = iceOption[i];
             if (storedGarnish[garnish] === true) {
                 garnishOption.push(storedGarnish);
-                // console.log(garnishOption)
+                console.log(garnishOption)
             }
         }
 
         const finalCocktail = getRandomCocktail(garnishOption);
         console.log(finalCocktail.name);
         
-        if (finalCocktail.name === 'pimms') {
-            $('.finalCocktailDescision').append(
-               `<h1>${finalCocktail.name}</h1>
-                <h2 class="shakeit">Shake it up!</h2>
-            `);
-        }         
+        // if (finalCocktail.name === 'pimms') {
+        //     $('.finalCocktailDescision').append(
+        //        `<h1>${finalCocktail.name}</h1>
+        //         <h2 class="shakeit">Shake it up!</h2>
+        //     `);
+        // }         
     });
-
-
-
 
 });
 
-
-
-// clear the radio buttons
+// clear the radio buttons on 'play again'
 
 $(function () { 
 
@@ -191,6 +325,7 @@ $(function () {
 
         $('form').trigger("reset");
         $('.finalCocktailDescision').empty();
+        $('.finishForm').empty();
 
     });
 });
