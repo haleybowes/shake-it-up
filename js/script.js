@@ -299,12 +299,22 @@ $(function (){
         const finalCocktail = getRandomCocktail(garnishOption);
         console.log(finalCocktail.name);
         
-        // if (finalCocktail.name === 'pimms') {
-        //     $('.finalCocktailDescision').append(
-        //        `<h1>${finalCocktail.name}</h1>
-        //         <h2 class="shakeit">Shake it up!</h2>
-        //     `);
-        // }         
+        if (finalCocktail.name === 'pimms') {
+            $('.finalCocktailDescision').append(
+               `<h1>${finalCocktail.name}</h1>
+               <div class="cocktailMain">
+                    <div class="ingredients">
+                        <h2>Ingredients</h2>
+                        <ul class="shakeit">
+                            <li>Ingredient 1</li>
+                            <li>Ingredient 2</li>
+                            <li>Ingredient 3</li>
+                            <li>Ingredient 4</li>
+                        </ul>
+                    </div>
+                </div>
+            `);
+        }         
     });
 
 });
@@ -323,6 +333,20 @@ $(function () {
     });
 });
 
+
+// button move up on click
+
+// $(function () {
+//     $('input[type=radio]').on('click', function(e) {
+//         e.preventDefault();
+
+//     });
+// });
+
+
+
+
+// twitter hookup
 
 window.twttr = (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],

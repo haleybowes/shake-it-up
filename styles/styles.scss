@@ -4,26 +4,30 @@
 @import "typography";
 @import "utils";
 
+// universal styles
+body{
+    max-width: 1920px;
+    background-color: $papaya;
+}
+
+a {
+    text-decoration: none;
+}
+
 // reusable classes 
 
 .fullView {
     height: 100vh;
 }
 
-body{
-    max-width: 1920px;
-    background-color: $papaya;
+.halfView {
+    height: 50vh;
 }
 
 .wrapper {
-    width: 60%;
+    width: 65%;
     margin: 0 auto;
 }
-
-// img {
-//     max-width: 100%;
-// }
-
 
 .button {
     text-align: right;
@@ -36,11 +40,6 @@ body{
         font-family: 'Questrial', sans-serif;
         letter-spacing: 2px;
     }
-    
-}
-
-a {
-    text-decoration: none;
 }
 
 // header styles
@@ -49,7 +48,6 @@ header {
     display: flex;
     overflow: hidden;
     justify-content: space-between;
-    
     
 }
 
@@ -78,8 +76,6 @@ header {
         display: none;
     }
 }
-
-
 
 .rightHeaderText {
     display: flex;
@@ -143,8 +139,6 @@ header {
 }
 
 
-
-
 .leftHeaderText {
     position: relative;
     margin-top: 10%;
@@ -154,7 +148,7 @@ header {
             line-height: 1;
             color: #EDEEE9;
             font-family: 'Shrikhand', cursive;
-             text-shadow: makelongshadow($petal);
+            text-shadow: makelongshadow($petal);
             
         }
         & .headerFull {
@@ -206,7 +200,6 @@ header {
         }
     }
 }
-
 
 @media (min-width: 975px) {
     .leftHeaderText {
@@ -297,3 +290,191 @@ header {
     }
 }
 
+
+// selection styling
+// font-family: 'Questrial', sans-serif;
+// font-family: 'Old Standard TT', serif;
+// font-family: 'Shrikhand', cursive;
+
+// .liquor {
+//     position: relative;
+// }
+
+.liquorHeader {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.questionNumbers1 {
+    font-family: 'Shrikhand', cursive;
+    
+    h1 {
+        @include fontSize(120);
+        margin: 0;
+        text-shadow: makelongshadow($petal);
+        color: white;
+        // margin-left: -60px;
+    }
+}
+
+h2 {
+   font-family: 'Shrikhand', cursive;
+   text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    @include fontSize(50);
+    text-align: left;
+    line-height: 0.9;
+    margin-top: 40px;
+    margin-left: 20px;
+}
+
+
+@function makelongshadowAgain($petal) {
+  $val: 0px 0px $color;
+  @for $i from 1 through 600 {
+    $val: #{$val}, #{$i}px -#{$i}px  #{$petal};
+  }
+  @return $val;
+}
+
+
+
+.flavourHeader {
+    display: flex;
+    justify-content: flex-end;
+
+    h2 {
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    & .questionNumbers2 {
+        font-family: 'Shrikhand', cursive;
+        h1 {
+        @include fontSize(120);
+        margin: 0;
+        text-shadow: makelongshadowAgain($petal);
+        color: white;
+        margin-bototm: 0;
+    }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// input styles
+
+label {
+    font-family: 'Questrial', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 30px;
+    font-weight: lighter;
+    @include fontSize(16);
+}
+
+.purpleBorder {
+    border: 1px solid $petal;
+}
+
+input[type="radio"] {
+    visibility: hidden;
+}
+
+.inputAlign {
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+@function makeInputShadow($petal) {
+  $val: 0px 0px $color;
+  @for $i from 0 through 20 {
+    $val: #{$val}, -#{$i}px #{$i}px #{$petal};
+  }
+  @return $val;
+}
+
+@keyframes shadowPop {
+    0% {
+        box-shadow: 0;
+        transform: translateX(0px) translateY(0px);
+        }
+    100% {
+        box-shadow: makeInputShadow($petal);
+        transform: translateX(20px) translateY(-20px);
+    }
+}
+
+input[type="radio"]:checked + label {
+    border: 1px solid $petal;
+    animation: shadowPop 0.5s both;    
+}
+
+.sectionImages {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
+    & .sectionCocktails {
+        width: 20%;
+        flex-wrap: wrap;
+        img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+        & .imgAdjust1 {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            margin-top: 8px;
+        }
+    }
+}
+
+
+// styling the submit button
+
+// font-family: 'Questrial', sans-serif;
+// font-family: 'Old Standard TT', serif;
+// font-family: 'Shrikhand', cursive;
+
+.submitSectionStyling {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & .shakerStyle {
+        width: 10%;
+        margin: 20px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin-right: 0;
+        }
+    }
+}
+
+input[type="submit"] {
+    color: white;
+    @include fontSize(30);
+    padding: 10px 40px;
+    font-family: 'Shrikhand', cursive;
+    background-color: $papaya;
+    border: 2px solid $petal; 
+    // text-transform: uppercase;
+}
