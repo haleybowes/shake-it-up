@@ -20,8 +20,7 @@
     <div class="logo">
         <img src="images/logo-2.png" alt="">
     </div>
-        <header id="top" class="mainHeader fullView">
-            
+        <header id="top" class="mainHeader fullView">   
             <div class="leftHeaderText">
                 <h1 class="headerFull">
                     Shake<br>
@@ -35,10 +34,12 @@
             </div>
             <div class="rightHeaderText">
                 <div class="headerPara">
-                    <p>Find your perfect summer cocktail with<br>this quick and easy questionnaire. </p>
+                    <p>Find your perfect summer cocktail with<br class="break">this quick and easy questionnaire. </p>
                 </div>
-                <div class="button">
-                    <a href="#">Get Shaking</a>
+                <div class="getShakingButton">
+                    <a href="#quizTop">
+                        <button>Get Shaking!</button>
+                    </a>
                 </div>
 
                 <div class="headerCocktails1">
@@ -78,8 +79,9 @@
                         <div class="questionNumbers1">
                             <h1>1.</h1>
                         </div>
-                        <h2>Favourite Liquor</h2>
+                        <h2 id="quizTop">Favourite Liquor</h2>
                     </div>
+            <div class="mobileView">
                 <div class="inputAlign">
                     <input type="radio" name="liquorChoice" id="gin" value="gin">
                     <label for="gin">Gin</label>
@@ -104,14 +106,16 @@
                         <img src="images/ct2-4.png" alt="">
                     </div>
                 </div>
-                </section>
-                <section class="flavourProfile halfView">
+            </div>
+            </section>
+                <section class="halfView">
                     <div class="flavourHeader">
                         <h2>Flavour Profile</h2>
                         <div class="questionNumbers2">
                             <h1>2.</h1>
                         </div>
                     </div>
+                <div class="mobileView">
                     <div class="inputAlign">
                         <input type="radio" name="flavour" id="sweet" value="sweet">
                         <label for="sweet">Sweet</label>
@@ -133,15 +137,25 @@
                             <img src="images/ct2-4.png" alt="">
                         </div>
                     </div>
+                    <div class="questionRelative">
+                        <a href="#nextQuestion">
+                            <div class="nextSection">
+                                <p>Next Questions</p>
+                                <img class="umbrella" src="images/umbrella.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
                 </section>
-
-                <section class="iceSelection halfView">
+                
+                <section  class="iceSelection halfView">
                     <div class="liquorHeader">
                         <div class="questionNumbers1">
                             <h1>3.</h1>
                         </div>
-                        <h2>Ice vs. No ice</h2>
+                        <h2 id="nextQuestion">Ice vs. No ice</h2>
                     </div>
+                <div class="mobileView">
                     <div class="inputAlign">
                         <input type="radio" name="ice" id="rocks" value="rocks">
                         <label for="rocks">Rocks</label>
@@ -160,16 +174,17 @@
                             <img src="images/ct2-4.png" alt="">
                         </div>
                     </div>
+                </div>
                 </section>
 
                 <section class="garnishSelection halfView">
                     <div class="flavourHeader">
-                        <h2>Choose a garnish</h2>
+                        <h2>Choose garnish</h2>
                         <div class="questionNumbers2">
                             <h1>4.</h1>
                         </div>
                     </div>
-                    <div class="inputAlign">
+                    <div class="inputAlign garnishAlign">
                         <input type="radio" name="garnish" id="herbs" value="herbs">
                         <label for="herbs">Herbs</label>
                         
@@ -181,34 +196,33 @@
                         <div class="shakerStyle">
                             <img src="images/martini-shaker.png" alt="">
                         </div>
-                        <div class="submitButton">
-                            <input type="submit" value="Shake it up!">
-                        </div>
+                        <a href="#quizResults">
+                            <!-- <button class="submitButton"> -->
+                                <input class="submitButton" type="submit" value="Shake it up!">
+                            <!-- </button> -->
+                        </a>
                         <div class="shakerStyle">
                             <img src="images/martini-shaker.png" alt="">
                         </div>
                     </div>
+                    <div class="finishForm">
+                    </div>
                 </section>
-
-                <!-- <input type="submit" value="Shake it up!"> -->
             </form>
-            <div class="finishForm">
-
-            </div>
             
-       
-        <div class="finalCocktailDescision fullView">
+            
+        
+        <div class="finalPlay">
+            <div class="finalCocktailDescision">
+                
+            </div>
+            <a href="#top">
+                <button class="playAgain">Try Again</button>
+            </a>
+            <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-url=“https://www.haleybowes.com” data-text="Find your perfect summer cocktail with this super fun quiz!">Tweet</a>
         </div>
-        <a href="#top">
-            <button>Play Again!</button>
-        </a>
 
 
-
-        <!-- twitter hookup -->
-
-        <a class="twitter-share-button" href="https://twitter.com/intent/tweet" data-size="large" data-url=“https://www.haleybowes.com” data-text="Find your perfect summer cocktail with this super fun quiz!">
-            Tweet</a>
 
 
     </main>

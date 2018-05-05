@@ -6,12 +6,14 @@
 
 // universal styles
 body{
-    max-width: 1920px;
+    // max-width: 1920px;
     background-color: $papaya;
+    color: white;
 }
 
 a {
     text-decoration: none;
+    color: white;
 }
 
 // reusable classes 
@@ -22,11 +24,24 @@ a {
 
 .halfView {
     height: 50vh;
+    @media (max-width: 1025px) {
+        height: 70vh;
+    }
+    @media (max-width: 570px) {
+        height: 50vh;
+    }
 }
 
 .wrapper {
     width: 65%;
     margin: 0 auto;
+    @media (max-width: 1025px) {
+        width: 80%;
+    }
+
+    @media (max-width: 825px) {
+        width: 90%;
+    }
 }
 
 .button {
@@ -48,7 +63,7 @@ header {
     display: flex;
     overflow: hidden;
     justify-content: space-between;
-    
+    max-width: 1920px;
 }
 
 .logo {
@@ -77,11 +92,38 @@ header {
     }
 }
 
+@media (max-width: 570px) {
+    .break {
+        display: none;
+    }
+}
+
 .rightHeaderText {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     margin-right: 40px;
+
+    & .getShakingButton {
+        text-align: right;
+        position: relative;
+        button {
+            color: white;
+            border: 1px solid white;
+            background-color: $papaya;
+            @include fontSize(18);
+            padding: 10px 30px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Questrial', sans-serif;
+            margin-right: 20px;
+            @media (max-width: 570px) {
+                @include fontSize(14);
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+        }
+    }
 
     @media (min-width: 1350px) {
         margin-right: 100px;
@@ -107,11 +149,6 @@ header {
 
             
         }
-    }
-    
-    & .button {
-        margin-top: 20px;
-        margin-bottom: 50px;
     }
 
     @media (min-width: 1080px) {
@@ -183,7 +220,7 @@ header {
             @media (max-width: 570px) {
                 @include fontSize(50);
                 padding-left: 20px;
-                top: 20px;
+                top: 70px;
                }
         }
     }
@@ -313,7 +350,9 @@ header {
         margin: 0;
         text-shadow: makelongshadow($petal);
         color: white;
-        // margin-left: -60px;
+        @media (max-width: 450px) {
+            @include fontSize(100);
+        }
     }
 }
 
@@ -327,6 +366,12 @@ h2 {
     line-height: 0.9;
     margin-top: 40px;
     margin-left: 20px;
+     @media (max-width: 450px) {
+            @include fontSize(40);
+            margin-left: 0;
+            margin-top: 30px;
+            line-height: 1;
+        }
 }
 
 
@@ -356,7 +401,10 @@ h2 {
         margin: 0;
         text-shadow: makelongshadowAgain($petal);
         color: white;
-        margin-bototm: 0;
+        margin-bottom: 0;
+         @media (max-width: 450px) {
+            @include fontSize(100);
+        }
     }
     }
 }
@@ -381,9 +429,14 @@ label {
     text-transform: uppercase;
     color: white;
     border: 1px solid white;
+    background: $papaya;
     padding: 10px 30px;
     font-weight: lighter;
     @include fontSize(16);
+    @media (max-width: 570px) {
+        margin-right: 30px;
+        width: 100%;
+    }
 }
 
 .purpleBorder {
@@ -398,6 +451,25 @@ input[type="radio"] {
     display: flex;
     justify-content: center;
     margin-top: -40px;
+    @media (max-width: 770px) {
+        margin-top: 10px;
+    }
+    @media (max-width: 570px) {
+        flex-direction: column;
+        text-align: center;
+        margin-right: 20px;
+        justify-content: flex-start
+    }
+}
+
+.inputAlign.garnishAlign {
+    @media (max-width: 570px) {
+        flex-direction: row;
+        text-align: center;
+        margin: 0;
+        text-align: center;
+        margin-bottom: 50px;
+    }
 }
 
 @function makeInputShadow($petal) {
@@ -428,43 +500,68 @@ input[type="radio"]:checked + label {
     display: flex;
     justify-content: center;
     margin-top: 40px;
+
+    @media (max-width: 570px) {
+        margin-top: 0;
+    }
     
     & .sectionCocktails {
-        width: 20%;
-        flex-wrap: wrap;
+        width: 18%;
+        @media (max-width: 570px) {
+            width: 35%;
+        }
+        
         img {
             width: 90%;
             height: 90%;
             object-fit: contain;
+            @media (max-width: 1025px){
+                width: 100%;
+                height: 100%;
+            }
         }
         & .imgAdjust1 {
             width: 80%;
             height: 80%;
             object-fit: contain;
             margin-top: 8px;
+            @media (max-width: 1025px){
+                width: 90%;
+                height: 90%;
+            }
         }
+    }
+}
+
+@media (max-width: 570px) {
+    .mobileView {
+        display: flex;
     }
 }
 
 
 // styling the submit button
 
-// font-family: 'Questrial', sans-serif;
-// font-family: 'Old Standard TT', serif;
-// font-family: 'Shrikhand', cursive;
 
 .submitSectionStyling {
     display: flex;
     justify-content: center;
     align-items: center;
     & .shakerStyle {
-        width: 10%;
+        width: 9%;
         margin: 20px;
         img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             margin-right: 0;
+        }
+    }
+
+    button {
+        &.submitButton {
+            background: $papaya;
+            border: none;
         }
     }
 }
@@ -477,4 +574,239 @@ input[type="submit"] {
     background-color: $papaya;
     border: 2px solid $petal; 
     // text-transform: uppercase;
+}
+
+
+// finish form 
+
+.finishForm {
+    font-family: 'Old Standard TT', serif;
+    color: white;
+    text-align: center;
+    @include fontSize (20);
+    font-weight: lighter;
+    padding-top: -20px;
+}
+
+
+.questionRelative {
+    position: relative;
+}
+
+.nextSection {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: -200px;
+    bottom: 40px;
+    
+    p {
+        @include fontSize(16);
+        font-family: 'Questrial', sans-serif;
+        text-transform: uppercase;
+        color: white;
+    }
+    & .umbrella {
+        transform: rotate(180deg);
+        height: 100px;
+        width: 80px;
+        margin-left: 25px;
+        margin-top: -15px;
+    }
+}
+
+
+// final cocktail section styling
+
+// font-family: 'Questrial', sans-serif;
+// 
+// font-family: 'Shrikhand', cursive;
+
+.finalCocktail {
+    h2 {
+        font-family: 'Old Standard TT', serif;
+        @include fontSize(25);
+        text-transform: none;
+        margin: 0;
+        padding-bottom: 30px;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    h1 {
+        font-family: 'Shrikhand', cursive;
+        color: white;
+        text-transform: uppercase;
+        @include fontSize(60);
+        margin: 0;
+        text-align: center;
+        line-height: 0.9;
+        margin-bottom: 30px;
+        letter-spacing: 1px;
+    }
+
+    & .cocktailMain {
+        & .ingredients {
+            text-align: center;
+            h3 {
+                font-family: 'Questrial', sans-serif;
+                text-transform: uppercase;
+                @include fontSize(16);
+                letter-spacing: 2px;
+                display: inline;
+                border-bottom:1px solid white;
+                padding-bottom: 10px;
+                padding-top: 30px;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    font-family: 'Old Standard TT', serif;
+                    @include fontSize(18);
+                    padding-bottom: 10px;
+                }
+
+                li:first-of-type {
+                    padding-top: 30px;
+                }
+
+                li:last-of-type {
+                    padding-bottom: 30px;
+                }
+            }
+        }
+        
+        & .cocktailInstructions {
+            h3 {
+                font-family: 'Questrial', sans-serif;
+                text-transform: uppercase;
+                @include fontSize(16);
+                letter-spacing: 2px;
+                // text-decoration: underline;
+                display: inline;
+                border-bottom:1px solid white;
+                padding-bottom: 10px;
+                padding-top: 30px;
+            }
+
+            p {
+                font-family: 'Old Standard TT', serif;
+                @include fontSize(18);
+                line-height: 1.6;
+            }
+
+            p:first-of-type {
+                padding-top: 20px;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+    }
+}
+
+// .finalPlay {
+//     text-align: center;
+// }
+// styling play again button
+
+.playAgain {
+    color: white;
+    background: $papaya;
+    border: 1px solid white;
+    @include fontSize(16);
+    text-transform: uppercase;
+    padding: 10px 40px;
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.twitter-share-button {
+    margin-top: 5px;
+}
+
+
+
+
+
+// animations 
+
+@-webkit-keyframes shake-lr {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  10% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  90% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+}
+@keyframes shake-lr {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+  }
+  10% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+  80% {
+    -webkit-transform: rotate(-8deg);
+            transform: rotate(-8deg);
+  }
+  90% {
+    -webkit-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+}
+
+.shake-lr {
+	-webkit-animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: shake-lr 0.7s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
