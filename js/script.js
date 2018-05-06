@@ -29,7 +29,6 @@ $('a[href*="#"]')
 
 // smooth scroll end
 
-// 
 const cocktailLiquor = {
     gin: [
         {
@@ -248,7 +247,7 @@ $(function (){
         const ice = $('input[name=ice]:checked').val();
         const garnish = $('input[name=garnish]:checked').val();
 
-        // make it required to fill out all fields in order to get a cocktail - inform user upon submit that a field is missing
+        // make it required for user to fill out all fields in order to get a cocktail - inform user upon submit that a field is missing
         if (!$('input[name=liquorChoice]:checked').val() ||
             !$('input[name=flavour]:checked').val() ||
             !$('input[name=ice]:checked').val() ||
@@ -262,9 +261,6 @@ $(function (){
 
         // filter the cocktail choices based on the users liquor choice
         const liquorChoice = cocktailLiquor[liquor];
-        // console.log(liquorChoice)
-
-        // if flavour is = true then 
 
         const liquorOption = [];
         
@@ -860,20 +856,10 @@ $(function (){
             </div>
             `);
         }    
-
-
-        
-
-
-
-
-
-
     });
-
 });
 
-// clear the radio buttons on 'play again'
+// clear the radio buttons / reset quiz on 'play again'
 
 $(function () { 
 
@@ -898,10 +884,6 @@ $(function () {
 
     });
 });
-
-
-
-
 
 
 // twitter hookup
